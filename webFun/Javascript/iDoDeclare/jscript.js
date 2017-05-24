@@ -1,0 +1,21 @@
+var num1 = 1;
+var num2 = 2;
+var num3 = -3;
+var num4 = .4;
+var str1 = "S";
+var str2 = "T";
+var str3 = "C";
+var name = true;
+var age = false;
+var un = undefined;
+
+console.log('The first string ' + str1);
+console.log('The second string ' + str2);
+console.log('The third string ' + str3);
+console.log('The first number ' + num1);
+console.log('The second number ' + num2);
+console.log('The third number ' + num3);
+console.log('The fourth number ' + num4);
+console.log('The first boolean ' + name);
+console.log('The first boolean ' + age);
+console.log('This one is '+ un);

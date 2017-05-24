@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block body %}
+	{% if messages %}
+		{% for message in messages %}
+			<div class="message-box">
+				<h3>{{ message['first_name'] }} {{ message['last_name'] }} {{ message['created_at'] }}</h3>
+				<p class="message">{{ message['message'] }}</p>
+				{% if session['user_id'] == message['user_id'] %}
+					<div class="delete-form">
+						<form name="delete-message" action="/messages/{{ message.id }}/delete" method="POST">
+							<input type="submit" name="submit-delete-message" value="DELETE POST">
+						</form>
+					</div>
+				{% endif %}
+				<div class="comment-box">
+					{% if comments %}
+						{% for comment in comments %}
+							{% if comment['message_id'] == message['id'] %}
+								<div class="comment">
+									<h6>{{ comment['first_name'] }} {{ comment['last_name'] }} {{ comment['created_at'] }}</h6>
+									<p>{{ comment['comment'] }}</p>
+									{% if session['user_id'] == comment['user_id'] %}
+										<div class="delete-comment-form">
+											<form name="delete-comment" action="/comments/{{ comment['id'] }}/delete" method="POST">
+												<input type="submit" value="DELETE COMMENT">
+											</form>
+										</div>
+									{% endif %}
+								</div>
+							{% endif %}
+						{% endfor %}
+					{% endif %}
+					<form name="new-comment" action="/comments" method="POST">
+						<input type="hidden" name="message-id" value="{{ message['id'] }}">
+						<textarea name="comment" placeholder="Write a comment" maxlength="500"></textarea>
+						<input type="submit" value="POST COMMENT">
+					</form>
+				</div>
+			</div>
+		{% endfor %}
+	{% endif %}
+{% endblock %}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{ title }}</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='normalize.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='skeleton.css') }}">
+	</head>
+	<body>
+		<h1>Look at all of your friends!</h1>
+		{% with messages = get_flashed_messages()%}
+			{% for msg in messages %}
+				<p class="errors">{{ msg }}</p>
+			{% endfor %}
+		{% endwith %}
+		<form action="/add-friend" method="POST">
+			<label for="first_name">First Name:</label>
+			<input type="text" name="first_name">
+			<label for="last_name">Last Name:</label>
+			<input type="text" name="last_name">
+			<label for="email">Email:</label>
+			<input type="text" name="email">
+			<input type="submit" value="Submit">
+		</form>
+		<h3>Your Friends</h3>
+		{% if friends: %}
+			{% for friend in friends %}
+				<div class="friends">
+					<p>{{ friend['first_name'] }} {{ friend['last_name'] }} : {{ friend['email'] }}</p><a href="/friends/{{friend.id}}/edit">edit friend</a><br><a href="/friends/{{friend.id}}/delete">destroy friend</a>
+				</div>
+			{% endfor %}
+		{% endif %}
+	</body>
+</html>

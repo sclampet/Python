@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{ title }}</title>
+	</head>
+	<body>
+		<h1>Survey Form</h1>
+		<form action="/process" method="POST">
+			{% csrf_token %}
+			<label>Your Name:<input type="text" name="name"></label>
+			<label>Dojo Location:
+				<select name="location">
+					{% for  location in locations %}
+						<option value="'{{location}}">{{location}}</option>
+					{% endfor %}
+				</select>
+			</label>
+			<label>Favorite Language:
+				<select name="language">
+					{% for language in languages %}
+						<option value="{{language}}">{{language}}</option>
+					{% endfor %}
+				</select>
+			</label>
+			<label>Comment (optional):
+				<textarea name="comment" maxlength="500"></textarea>
+			</label>
+			<input type="submit" value="Submit">
+		</form>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+{% extends "./layout.html" %}
+{% block body %}
+	<h4>Add a New Book Title and Review:</h4>
+	{% for msg in messages %}
+		<p class="error">{{ msg }}</p>
+	{% endfor %}
+	<form action="{% url 'book_review:create' %}" method="POST">
+		{% csrf_token %}
+		<label>Book Title:</label>
+		<input type="text" name="title" placeholder="Breakfast of Champions">
+		<label>Author:</label>
+		<div id="authors">
+			<label class="subhead">Choose from the list:</label>
+			<select name="author-select">
+				{% for book in authors %}
+					<option value="{{ book.author }}">{{ book.author }}</option>
+				{% empty %}
+					<option value="n/a">n/a</option>
+				{% endfor %}
+			</select>
+			<label class="subhead">Or add a new author:</label>
+			<input type="text" name="author-text">
+		</div>
+		<label>Review:</label>
+		<textarea name="review" rows="8" cols="50" maxlength="5000"></textarea>
+		<label>Rating:</label>
+		<input name="rating" type="number" min="0" max="5" value="0"><span>stars</span>
+		<input type="submit" value="Add Book and Review">
+	</form>
+{% endblock %}

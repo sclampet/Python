@@ -1,0 +1,35 @@
+.square{
+	height: 100px;
+	width: 100px;
+	background: blue;
+}
+.circle{
+	height: 100px;
+	width: 100px;
+	border-radius: 100px;
+	background: blue;
+}
+.upTriangle{
+	width: 0;
+	height: 0;
+	margin-bottom: 100px;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-bottom: 100px solid blue;
+
+}
+.pacman{
+	height: 0px;
+	width: 0px;
+	border-right: 60px solid transparent;
+	border-top: 60px solid blue;
+	border-left: 60px solid blue;
+	border-bottom: 60px solid blue;
+	border-top-left-radius: 60px;
+	border-top-right-radius: 60px;
+	border-bottom-left-radius: 60px;
+	border-bottom-right-radius: 60px;
+}
+
+
+}

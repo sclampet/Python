@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<h1>Random Word</h1>
+		<div class="random-word-box">
+			<h5>{{ new_word }}</h5>
+			<form action="/" method="POST">
+				{% csrf_token %}
+				<input type="submit" value="Generate">
+			</form>
+		</div>
+	</body>
+</html>

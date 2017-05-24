@@ -1,0 +1,5 @@
+1. Changing the port value threw an error.
+2. Removing 'config['user']' from DATABASE_URI threw, Failed to load resource: net::ERR_CONNECTION_REFUSED
+3. Setting "app.config['SQLALCHEMY_TRACK_MODIFICATIONS']" equal to False didn't throw an error for some reason.
+4. Putting a non-existent db as your argument in the MySQLConnector throws (_mysql_exceptions.OperationalError) (1049, "Unknown database 'apple'")
+5. Removing "import SQLAlchemy" throws net::ERR_CONNECTION_REFUSED

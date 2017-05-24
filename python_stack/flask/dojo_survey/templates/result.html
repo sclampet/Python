@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Dojo Survey - Results</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<h4>Submitted Info</h4>
+			{% for key,value in info.items() %}
+				<p>{{ key }}: {{ value }}</p>
+			{% endfor %}
+		</div>
+	</body>
+</html>

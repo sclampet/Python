@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My jQuery Assignment</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#addClass').click(function(){
+					$('p').toggleClass('red');
+				});
+				$('#slidetoggle').click(function(){
+					$('p').slideToggle('slow',function(){
+						//animation complete.
+					});
+				});
+				$('#append').click(function(){
+					$('h1').append('!');
+				});
+				$('#changeText').click(function(){
+					$('p').text('Hey! Why did you change me?');
+				});
+				$('#html').click(function(){
+					$('h1').html('Changes text similar to .text');
+				});
+				$('#attr').click(function(){
+					$('#attr').attr("width", "300");
+				});
+				$( "#focus" ).focus(function() {
+					$( this ).next( "span" ).css( "display", "inline" ).fadeOut( 2000 );
+				});
+				$("#data1").click(function(){
+        			$("div").data("greeting", "Hello World");
+    			});
+    			$("#data2").click(function(){
+        			alert($("div").data("greeting"));
+    			});
+    			$("#imgFadeOut").click(function(){
+        			$("img").fadeOut()
+    			});
+    			$("#imgFadeIn").click(function(){
+        			$("img").fadeIn()
+    			});
+    			$("#slideUp").click(function(){
+    				$("p").slideUp();
+    			});
+    			$("#slideDown").click(function(){
+    				$("p").slideDown();
+    			});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div id="row">
+				<button type="button" class="add" id="addClass">AddClass</button>
+				<button type="button" class="add" id="changeText">Change Text</button>
+				<button type="button" class="add" id="data1">Click to add data to this button ---->></button>
+				<button type="button" class="add" id="data2">Click to see what data was added!</button>
+				<div class="data"></div>
+				<div id="text">
+					<h1>AddClass</h1>
+					<p>Click the button to add class 'red' to this paragraph</p>
+				</div>
+			</div>
+			<div id="row">
+				<button type="button" class="add" id="slidetoggle">Slidetoggle</button>
+				<button type="button" class="add" id="attr">Attr</button>
+				<input type="text" name="form" placeholder="Click to get focus" id="focus"></input>
+				<span>Oohh AAhhhh</span>
+				<div id="text">
+					<h1>Slidetoggle</h1>
+					<p>Click the button to slidetoggle a hidden image</p>
+				</div>
+			</div>
+			<div id="row">
+				<button type="button" class="add" id="append">Append</button>
+				<button type="button" class="add" id="html">.html</button>
+				<div id="text">
+					<h1>Append</h1>
+					<p>Click the button to append a new paragraph!</p>
+				</div>
+				<button type="button" class="add" id="slideDown">Slide it down!</button>
+				<button type="button" class="add" id="slideUp">Slide it Up!</button>
+			</div>
+			<img src="./images/baby.png" alt="baby" />
+			<button type="button" class="add" id="imgFadeOut">Fade out the baby.</button>
+			<button type="button" class="add" id="imgFadeIn">Fade in the baby.</button>
+		</div>
+	</body>
+</html>

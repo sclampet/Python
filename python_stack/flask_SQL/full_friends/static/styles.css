@@ -1,0 +1,21 @@
+.errors{
+	background-color: red;
+	color: white;
+	display: inline-block;
+}
+.success{
+	background-color: green;
+	color: white;
+	display: inline-block;
+}
+a{
+	text-decoration: none;
+	display: inline-block;
+}
+.friends{
+	display: inline-block;
+	background: linear-gradient(silver,indigo);
+	padding: 5px;
+	border-radius: 15px;
+
+}

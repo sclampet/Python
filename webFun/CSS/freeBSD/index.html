@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<title>freeBSD</title>
+	</head>
+	<body>
+		<div class="container">
+			<div id="header">
+				<!-- Any time you have only one item inside of a div, you more than likely dont need that div. in the below the image and Power to Serve did not need to be inside of <div>.  -->
+				<div id="logo">
+					<img src="logo.png" width="300" height="83" alt="logo">
+				</div>
+				<div id="powerTo">
+					<!-- this would have been the perfect place for an <h1> as this is the main heading of the document. -->
+					<p>The Power To Serve</p>
+				</div>
+				<!-- This is where i would have wrapped textSize and and the search section into one div. and let the p tag and the search div stack ontop of each other to get the styling desired -->
+				<div id="textSize">
+					<p>Text Size: <a href="/">Normal</a> / <a href="/">Large</a> | <a href="/">Donate</a> | <a href="/">Contact</a></p>
+				</div>
+				<div id="search">
+					<input type="text" placeholder="search"></input>
+					<button type="button">search</button>
+				</div>
+			</div>
+			<div class="menu">
+				<!-- No need for the menuItems div. Your <p> is already a block element and can be styled directly. -->
+				<p><strong>Home  |  About  |  Get Free BSD  |  Documentation  |  Community  |  Developers  |  Support  |  Foundation</strong></p>
+			</div>
+			<div class="index">
+				<ul>
+					<li><a href="/">Developers</a></li>
+					<li><a href="/">Developer's Handbook</a></li>
+					<li><a href="/">Porter's Handbook</a></li>
+					<li><a href="/">Source code repositories</a></li>
+					<li><a href="/">Releast Engineering</a></li>
+					<li><a href="/">Platforms</a></li>
+					<li><a href="/">Project Ideas</a></li>
+					<li><a href="/">Contributing</a></li>
+				</ul>
+			</div>
+			<div class="introduction">
+				<!-- This should probably not be an h1 as it is not the over arching heading element. This would have been better as an h2 and all your h5 should probably be h3 in order of importance. remember h tags are not for styling but for document placement importance. -->
+				<h1>FreeBSD/ppc Project</h1>
+				<h5>Introduction</h5>
+				<p>The FreeBSD/ppc project pages contain information about the Free BSD port to the PowerPC® architecture. As with the port itself, thes pages are still a work in progress.</p>
+				<h5>Table Of Contents</h5>
+					<ul>
+						<li><a href="/">Status</a></li>
+						<li><a href="/">Latest News</a></li>
+						<li><a href="/">Port FAQs</a></li>
+						<li><a href="/">Support Hardware</a></li>
+						<li><a href="/">FreeBSD/ppc mailing list</a></li>
+						<li><a href="/">Known Issues</a></li>
+						<li><a href="/">Documentaion, White Papers, Utilities</a></li>
+						<li><a href="/">Other links of interest</a></li>
+					</ul>
+				<h5>Status</h5>
+				<p>The FreeBSD/ppc port is still a <a href="/">Tier 2</a> platform. That means it is not being fully supported by our security officer, release engineers and toolchain maintainers.</p>
+			</div>
+			<div class="latestNews">
+				<h5>Latest News</h5>
+				<ul>
+					<!-- <strong> is a tag that allows you to put empasis on a word (bold) and this is a styling of the text. Because of this you want to keep this in your CSS. Here i would have used a <span> and put my CSS styling on the span tag -->
+					<li><strong>03 April, 2009</strong>: Support for the PowerPC G5 has been committed to SVN.</li>
+					<li><strong>03 March, 2008</strong>: Support for the Freescale® PowerQUICC III MPC85XX family ystem-on-chip development boards has been committed into CVS.</li>
+					<li><strong>27 February, 2008</strong>: FreeBSD 7.0 is the first release to officially support the FreeBSD/ppc port.</li>
+				</ul>
+			</div>
+			<div class="faq">
+				<h5>Frequently Asked Questions</h5>
+				<ol>
+					<li><a href="/">How can I install FreeBSD/ppc?</a></li>
+					<li><a href="/">How to use ports on FreeBSD/ppc?</a></li>
+					<li><a href="/">Who should I contact?</a></li>
+				</ol>
+				<h5>How can I install FreeBSD/ppc?</h5>
+				<p>ISO images of FreeBSD 8.2 suitable for New Wrold Macs are available for download, for details on how to obtain these see the <a href="/">release announcement.</a> Please follow instructions given <a href="/">here.</a></p>
+				<h5>How to use ports on FreeBSD/ppc?</h5>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,18 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+img{
+	height: 200px;
+	width: 150px;
+	margin: 30px;
+	border: 2px solid silver;
+	border-radius: 10px;
+	display: inline;
+}
+.body{
+	width: 910px;
+	padding: 10px;
+	display: inline-block;
+	background: teal;
+}

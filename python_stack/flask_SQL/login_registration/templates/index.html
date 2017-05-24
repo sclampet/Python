@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{ title }}</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='normalize.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='skeleton.css') }}">
+	</head>
+	<body>
+	<h1>Login or Register to become a New User!</h1>
+	{% with messages = get_flashed_messages() %}
+		{% for error in messages%}
+			<p>{{ error }}</p>
+		{% endfor %}
+	{% endwith %}
+		<form action="/users" method="POST">
+			<label for="email">Email:</label>
+			<input type="text" name="email">
+			<label for="password">Password:</label>
+			<input type="text" name="password">
+			<input type="Submit" value="Register">
+		</form>
+		<p><a href="/register">Register to become a user!</a></p>
+	</body>
+</html>

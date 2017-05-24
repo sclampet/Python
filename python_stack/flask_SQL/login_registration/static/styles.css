@@ -1,0 +1,12 @@
+.red{
+	color: red;
+	display: inline-block;
+}
+.green{
+	color: green;
+	display: inline-block;
+}
+a{
+	text-decoration: none;
+	display: inline-block;
+}

@@ -1,0 +1,20 @@
+{% extends "./layout.html" %}
+{% block body %}
+	{% for msg in messages %}
+		<p class="error">{{ msg }}</p>
+	{% endfor %}
+	<div id="user-info">
+		<h4>User Alias {{ user_info.alias }}</h4>
+		<h6>Name: {{ user_info.first_name }} {{ user_info.last_name }}</h6>
+		<h6>Email: {{ user_info.email }}</h6>
+		<h6>Total Reviews: {{ user_info.total_reviews }}</h6>
+	</div>
+	<div id="posted-reviews">
+		<h4>Posted Reviews on the following books:</h4>
+		{% for book in user_info.books %}
+			<p><a href="{% url 'book_review:show' book.id %}">{{ book.title }}</a></p>
+		{% empty %}
+			<p>No reviews have been written yet!</p>
+		{% endfor %}
+	</div>
+{% endblock %}

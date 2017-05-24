@@ -1,0 +1,22 @@
+{% extends "./layout.html"%}
+{% block body %}
+	{% if user %}
+		{% if messages %}
+			{% for msg in messages %}
+				<p class="errors">{{ msg }}</p>
+			{% endfor %}
+		{% endif %}
+<!-- 		<h1>Time to get rich {{ user }}!</h1>
+ -->		<h1>Leaderboard</h1>
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>Last Played</th>
+				<th>Score</th>
+			</tr>
+		</table>
+	{% else %}
+		<h1>Time to get rich!</h1>
+	{% endif %}
+		{% block ninja %}{% endblock %}
+{% endblock %}

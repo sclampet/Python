@@ -1,0 +1,133 @@
+/* If you are not going to put anything in the global settings do not put it in your css code.*/
+
+*{
+
+}
+
+.container{
+	/* suggest not putting a height on your container. Let your content determine how high the container will be*/
+	height: 1070px;
+	width: 970px;
+	margin: 0px auto;
+	background-color: white;
+}
+#header{
+	/* first background not needed */
+	background: red;
+	background: linear-gradient(black,red);
+	border: solid;
+	border-width: 1px;
+	border-color: lightgrey;
+	height: 140px;
+	padding: 10px;
+}
+#logo{
+	display: inline-block;
+	margin-top: 35px;
+	margin-left: 40px;
+	vertical-align: top;
+}
+#powerTo{
+	background: transparent;
+	display: inline-block;
+	margin-top: 35px;
+	vertical-align: top;
+	font-family:
+}
+	#powerTo p{
+		color: white;
+		font-size: 25px;
+	}
+#textSize{
+	height: 45px;
+	background-color: white;
+	background: transparent;
+	display: inline-block;
+	margin-left: 100px;
+}
+	#textSize p{
+		color: white;
+	}
+	#textSize a{
+		color: #E6BD34;
+	}
+#search{
+	display: inline-block;
+	position: relative;
+    bottom: 75px;
+    left: 718px;
+}
+
+/* No id called button. This styling isnt doing anything */
+#button{
+	width: 50px;
+	display: inline-block;
+    font-size: 14px;
+    font-weight: normal;
+    color: #555;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+/* because of no need for the inner div - just putting the styling on the one element. inline block would only been needed if using a <ul> <li> combination for the links*/
+.menu{
+	/*display: inline-block;*/
+	background: linear-gradient(#CBCBCB,white);
+	border: solid;
+	border-width: 1px;
+	border-color: lightgrey;
+	color: grey;
+	padding-left: 50px;
+	/*width: 968px;*/
+}
+/*#menuItems{
+	padding-left: 50px;
+	display: inline-block;
+	color: grey;
+}*/
+.index{
+	height: 200px;
+	width: 200px;
+	display: inline-block;
+	vertical-align: top;
+	background-color: #FEF0F1;
+	/* This should be written in one line */
+	border: 1px solid lightgrey;
+	/*border: solid;
+	border-width: 1px;
+	border-color: lightgrey;*/
+	margin-left: 20px;
+	margin-top: 25px;
+	padding: 5px;
+}
+
+/* The following three classes have 3-4 of the same styling. This would be where you could wrap these in a class that could be shared with each section. */
+.introduction{
+	width: 700px;
+	display: inline-block;
+	margin-left: 20px;
+	border-bottom: solid;
+	background-color: white;
+	border-width: 2px;
+}
+.latestNews{
+	width: 700px;
+	display: inline-block;
+	margin-left: 254px;
+	background-color: white;
+	border-bottom: solid;
+	border-width: 2px;
+}
+.faq{
+	width: 700px;
+	display: inline-block;
+	margin-left: 254px;
+	background-color: white;
+}
+
+li, p{
+	font-size: 14px;
+}
+a, h1, h5{
+	color: darkred;
+}

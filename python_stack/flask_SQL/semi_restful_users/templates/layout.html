@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{ title }}</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='normalize.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='skeleton.css') }}">
+	</head>
+	<body>
+		{% if not session['user_id'] %}
+			<div id="header">
+				<h1>Login or Sign Up</h1>
+				{% with messages = get_flashed_messages() %}
+					{% if messages %}
+						{% for msg in messages %}
+							<ul>
+								<li class="errors">{{ msg }}</li>
+							</ul>
+						{% endfor %}
+					{% endif %}
+				{% endwith %}
+				<form name="login" action="/login" method="POST">
+					<input type="text" name="email" placeholder="email">
+					<input type="text" name="password" placeholder="password">
+					<input type="submit" value="LOGIN">
+				</form>
+				<a class="button" name="sign-up" href="/register">SIGN UP</a>
+				<h3>Users</h3>
+			</div>
+		{% else %}
+			<div id="header">
+				<h1>Welcome {{ user[0]['first_name'] }} {{ user[0]['last_name'] }}</h1>
+				<a class="button" name="logout" href="/logout">LOGOUT</a>
+			</div>
+			<h3>Users</h3>
+			<a class="button" name="add-user" href="/users/new">Add User</a>
+		{% endif %}
+		{% block body %}
+		{% endblock %}
+	</body>
+</html>

@@ -1,0 +1,146 @@
+/* Did some serious clean up and re organizing after the comments on my freeBSD code.*/
+
+* {
+	font-family: sans-serif;
+	padding: 0px;
+	margin: 0px;
+}
+
+.container {
+	width: 970px;
+	margin: 0 auto;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.head {
+	background: #E6E6E6; 
+	padding: 0px 15px 2px 15px;
+	border-style: bold;
+	border-width: 2px;
+	border-color: darkgrey;
+}
+
+	.head *{
+		display: inline-block;
+	}
+
+	.head h1{
+		font-size: 15pt;
+		vertical-align: top;
+		margin-left: 230px;
+		margin-top: 35px;
+	}
+
+.menu {
+	background: white;
+}
+
+.navBar {
+	background: #E6E6E6; 
+	border-top: solid;
+	padding: 0px 25px;
+}
+
+	.navBar a{
+	text-decoration: none;
+	color: grey;
+	}
+	.navBar li {
+		display: inline-block;
+		background: transparent;
+		padding: 10px 20px;
+		font-size: 8pt;
+		border: solid;
+		border-color: darkgrey;
+		border-width: 2px;
+	}
+
+.menu img {
+	margin-left: 15px;
+}
+
+.body {
+	background: radial-gradient(#494949, #1E1E1E); 
+	padding: 20px 25px;
+}
+
+.mainBody {
+	width: 490px;
+	height: 260px;
+	background: rgba(255, 255, 255, 0.1);
+	display: inline-block;
+	margin-left: 20px;
+	color: white;
+}
+
+	.mainBody .text {
+		padding: 5px;
+	}
+
+	.mainBody p {
+		font-size: 9pt;
+		margin-top: 15px;
+	}
+#mainPic {
+	vertical-align: top;
+	border: solid white 6px;
+}
+.header {
+	background: #F6C421; 
+    padding: 10px;
+    border: solid black 0.1px;
+    font-size: 10pt;
+    color: black;
+}
+
+#miniLogo {
+	height: 10px;
+	margin: 10px;
+}
+
+.extraInfo {
+	color: #b2b266;
+	margin-left: 10px;
+	margin-top: 10px;
+	font-size: 8pt;
+	vertical-align: top;
+	display: inline-block;
+}
+
+.lowerContent {
+	display: inline-block;
+	background: white; 
+    width: 220px;
+    vertical-align: top;
+    margin-left: 2px;
+}
+	.lowerContent .header {
+		font-size: 10pt;
+	}
+	.lowerContent p {
+	font-size: 8pt;
+	min-height: 60px;
+	}
+
+	.lowerContent img {
+		width: 222px;
+		height: 101px;
+	}
+
+	.lowerContent .text {
+		padding: 5px;
+	}
+
+	.lowerContent button {
+		margin-top: 5px;
+		margin-left: 110px;
+		width: 95px;
+		font-size: 7pt;
+		background: #F6C421;
+		border-style: bold;
+		border-color: black;
+		border-width: 2px;
+	}

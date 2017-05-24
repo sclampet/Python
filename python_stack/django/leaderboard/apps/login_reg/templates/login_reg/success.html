@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{ title }}</title>
+		{% load staticfiles %}
+		<link rel="stylesheet" type="text/css" href="{% static 'login_reg/css/skeleton.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'login_reg/css/normalize.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'login_reg/css/styles.css' %}">
+	</head>
+	<body>
+		{% if messages %}
+			{% for msg in messages %}
+				<h1 class="success">{{ msg }}</h1>
+			{% endfor %}
+		{% endif %}
+	</body>
+</html>

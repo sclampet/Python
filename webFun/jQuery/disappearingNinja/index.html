@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Disappearing Ninja</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('img').click(function(){
+					$(this).hide(1000);
+				});
+				$('#appear').click(function(){
+					$('img').show(1000);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<h1>Click on Drumpf to restore order!!</h1>
+			<div class="imageSet">
+				<img src="./images/drumpf.jpg">
+				<img src="./images/drumpf.jpg">
+				<img src="./images/drumpf.jpg">
+				<img src="./images/drumpf.jpg">
+				<img src="./images/drumpf.jpg">
+				<img src="./images/drumpf.jpg">
+				<img src="./images/drumpf.jpg">
+				<img src="./images/drumpf.jpg">
+			</div>
+			<div class="buttons">
+				<button type="button" id="appear"><h2>Click to do it again!</h2></button>
+			</div>
+		</div>
+
+	</body>
+</html>

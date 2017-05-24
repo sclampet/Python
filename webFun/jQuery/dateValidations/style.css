@@ -1,0 +1,26 @@
+*{
+	padding: 0px;
+	margin-left: 0px;
+}
+form{
+	width: 30%;
+	margin: 0 auto;
+	display: inline-block;
+}
+input{
+	display: block;
+	height: 20px;
+	width: 100%;
+	margin: 50px;
+}
+h1{
+	text-align: center;
+}
+.application{
+	background: linear-gradient(teal,silver);
+	width: 50%;
+	padding: 10px;
+}
+.ui-widget.ui-widget-content {
+    border: 1px solid #c5c5c5;
+}

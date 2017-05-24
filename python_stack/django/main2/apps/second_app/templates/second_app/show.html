@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		{% load staticfiles %}
+		<link rel="stylesheet" type="text/css" href="{% static 'second_app/css/skeleton.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'second_app/css/normalize.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'second_app/css/styles.css' %}">
+	</head>
+	<body>
+		<h1>Future User</h1>
+		<p>I bet rather than passing this id: {{id}} we could eventually go to a db and a user based on a sql statement that is equivlant to "SELECT * FROM users WHERE id = {{id}}"</p>
+	</body>
+</html>

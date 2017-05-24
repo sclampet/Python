@@ -1,0 +1,23 @@
+*{
+	padding: 0;
+	margin: 10px;
+}
+.errors{
+	color: red;
+	display: inline-block;
+}
+.success{
+	color: green;
+	display: inline-block;
+}
+a{
+	text-decoration: none;
+	display: inline-block;
+}
+.friends{
+	display: inline-block;
+	background: linear-gradient(silver,indigo);
+	padding: 5px;
+	border-radius: 15px;
+
+}

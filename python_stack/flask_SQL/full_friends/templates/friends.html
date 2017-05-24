@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{ title }}</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='normalize.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='skeleton.css') }}">
+	</head>
+	<body>
+		<h1>Edit your friend's information!</h1>
+		{% for friend in friend %}
+			<form action="/friends/<id>" method="POST">
+				<input type="hidden" name="id" value="{{friend.id}}">
+				<label for="first_name">First Name:</label>
+				<input type="text" name="first_name" value="{{friend['first_name']}}">
+				<label for="last_name">Last Name:</label>
+				<input type="text" name="last_name" value="{{friend['last_name']}}">
+				<label for="email">Email:</label>
+				<input type="text" name="email" value="{{friend['email']}}">
+				<input type="submit" value="Submit">
+			</form>
+		{% endfor %}
+	</body>
+</html>

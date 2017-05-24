@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Email Validation + SQL</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+	</head>
+	<body>
+		<h1>Please Enter a Valid Email Address</h1>
+		{% with errors = get_flashed_messages(category_filter=['errors']) %}
+			{% if errors %}
+				{% for msg in errors %}
+					<p class='error'>{{ msg }}</p>
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+		<form action="/add-email" method="POST">
+			<label for="email">Email Address:</label>
+			<input type="text" name="email" id="email">
+			<input type="submit" value="Submit">
+		</form>
+	</body>
+</html>

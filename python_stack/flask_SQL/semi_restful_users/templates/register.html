@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{ title }}</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='normalize.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='skeleton.css') }}">
+	</head>
+	<body>
+		<h1>Add a new user</h1>
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				{% for msg in messages %}
+					<ul>
+						<li class="errors">{{ msg }}</li>
+					</ul>
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+		<div id="registration-form">
+			<form action="/users" method="POST">
+				<label>First Name:</label>
+				<input type="text" name="first_name" placeholder="Krombopulos">
+				<label>Last Name:</label>
+				<input type="text" name="last_name" placeholder="Michael">
+				<label>Email:</label>
+				<input type="text" name="email" placeholder="kmichael@rnm.com">
+				<label>Password:</label>
+				<input type="text" name="password" placeholder="********">
+				<label>Confirm:</label>
+				<input type="text" name="confirm" placeholder="********">
+				<input type="submit" value="SIGN UP">
+			</form>
+		</div>
+	</body>
+</html>

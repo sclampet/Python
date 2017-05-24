@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{ title }}</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='normalize.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='skeleton.css') }}">
+	</head>
+	<body>
+		<h1>The Wall</h1>
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				{% for msg in messages %}
+					<p class="errors">{{ msg }}</p>
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+		{% if not session['user_id'] %}
+			<div id="login-module">
+				<form name="login" action="/login" method="POST">
+					<input type="text" name="email" placeholder="email">
+					<input type="text" name="password" placeholder="password">
+					<input type="submit" value="LOGIN">
+				</form>
+				<a class="button" name="signup-button" href="/register">SIGN UP</a>
+			</div>
+		{% else %}
+			<div id="login-module">
+				<p>Welcome {{ user[0]['first_name'] }} {{ user[0]['last_name'] }}</p>
+				<a class="button" name="logout-button" href="/logout">LOGOUT</a>
+			</div>
+			<div id="message-module">
+				<form name="new-message" action="/messages" method="POST">
+					<textarea name="message" placeholder="Write a message" maxlength="500"></textarea>
+					<input type="submit" value="POST MESSAGE">
+				</form>
+			</div>
+		{% endif %}
+		{% block body%}
+		{% endblock %}
+	</body>
+</html>

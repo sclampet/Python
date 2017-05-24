@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	<h1>Hi we did it!</h1>
+	{% for r in result %}
+		<p>City: {{r.name}} Population: {{r.country_id}}</p>
+	{% endfor %}
+		<form class="insertion" action="/process" method="POST">
+			<input type="text" name="" value="">
+		</form>
+	</body>
+</html>

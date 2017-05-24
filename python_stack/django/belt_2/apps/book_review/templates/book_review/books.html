@@ -1,0 +1,7 @@
+{% extends "./layout.html" %}
+{% block body %}
+	{% for book in books %}
+		<h4><a href="{% url 'book_review:show' book.id %}">{{ book.title }}</a></h4>
+		<p>{{ book.author }}</p>
+	{% endfor %}
+{% endblock %}

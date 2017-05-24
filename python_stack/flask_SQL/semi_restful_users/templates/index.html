@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block body %}
+	{% if allusers %}
+		{% for user in allusers %}
+			<table id="users">
+				<tr>
+					<th>Full Name</th>
+					<th>Email</th>
+					<th>Created At</th>
+					<th>Actions</th>
+				</tr>
+				<tr>
+					<td>{{ user['first_name'] }} {{ user['last_name'] }}</td>
+					<td>{{ user['email'] }}</td>
+					<td>{{ user['created_at'] }}</td>
+					<td><a name="show" href="/users/<id>/show">Show</td>
+					<td><a name="edit" href="/users/<id>/edit">Edit</td>
+					<td><a name="delete" href="/users/<id>/delete">Delete</td>
+				</tr>
+			</table>
+		{% endfor %}
+	{% endif %}
+{% endblock %}

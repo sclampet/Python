@@ -1,0 +1,14 @@
+{% extends "./layout.html" %}
+{% block body %}
+	<h4>Title: {{ book_info.title }}</h4>
+	<p>Author: {{ book_info.author }}</p>
+	<h4>Reviews:</h4>
+	{% for review in book_info.reviews %}
+		<ul>
+			<li>Rating: {{ review.rating }} stars</li>
+			<li><a href="{% url 'user_management:show' review.review_user.id %}">{{ review.review_user.alias }} </a>says: {{ review.review }}</li>
+			<li>Posted at {{ review.created_at }}</li>
+		</ul>
+	{% endfor %}
+	<p><a href="{% url 'book_review:books' %}">See all books!</a></p>
+{% endblock %}

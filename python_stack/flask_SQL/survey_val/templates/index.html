@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{ title }}</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='normalize.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='skeleton.css') }}">
+	</head>
+	<body>
+		<h1>The Students</h1>
+		{% with errors = get_flashed_messages() %}
+			{% if errors %}
+				{% for error in errors%}
+					<p class="errors">{{ error }}</p>
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+		{% for student in students%}
+			<p>{{ student }}</p>
+		{% endfor %}
+		<form action="/users" method="POST">
+			<label for="first_name">First Name:</label>
+			<input type="text" name="first_name" value="">
+			<label for="last_name">Last Name:</label>
+			<input type="text" name="last_name" value="">
+			<label for="birth_date">Date:</label>
+			<input type="date" name="birth_date" value="">
+			<label for="password">Password:</label>
+			<input type="password" name="password" value="">
+			<label for="conf_password">Confrim Password:</label>
+			<input type="password" name="conf_password" value="">
+			<input type="submit" value="Submit">
+		</form>
+	</body>
+</html>

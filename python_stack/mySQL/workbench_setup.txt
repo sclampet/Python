@@ -1,0 +1,4 @@
+1. Found the port that MySQL is connected to via MAMP.
+2. Created a new connection in  MySQLWorkbench, named it, and connected to that port.
+3. Password is automatically 'root' for MAC computers.
+4. To do queries in a specific database, I pasted the sql file from 'twitter.sql' for example and ran 		it. Then refreshed my schemas and removed the pasted code to start adding my queries.

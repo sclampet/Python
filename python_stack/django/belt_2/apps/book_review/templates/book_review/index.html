@@ -1,0 +1,31 @@
+{% extends "./layout.html" %}
+{% block welcome %}
+	{% if request.session.user_id %}
+		<h4>Welcome, {{ request.session.alias }}</h4>
+	{% else %}
+		<h4>Sign in to leave a review!</h4>
+	{% endif %}
+{% endblock %}
+{% block body %}
+	<div id="recent-reviews">
+		<h4>Recent Book Reviews</h4>
+		{% for review in reviews %}
+			<h6><a href="{% url 'book_review:show' review.review_book.id %}">{{ review.review_book.title }}</a></h6>
+			<p>Rating {{ review.review_book.rating }} stars</p>
+			<p><a href="{% url 'user_management:show' review.review_user.id%}">{{ review.review_user.alias }}</a> says: {{ review.review }}</p>
+			<p>Posted at {{ review.created_at }}</p>
+			{% if request.session.user_id == review.review_user.id %}
+				<form action="{% url 'book_review:destroy' review.id %}" method="POST">
+					{% csrf_token %}
+					<input type="submit" value="Delete Review">
+				</form>
+			{% endif %}
+		{% endfor %}
+	</div>
+	<div id="other-book-reviews">
+		<h4>Other Books with Reviews</h4>
+		{% for review in reviews %}
+			<h6>{{ review.review_book.title }}</h6>
+		{% endfor %}
+	</div>
+{% endblock %}

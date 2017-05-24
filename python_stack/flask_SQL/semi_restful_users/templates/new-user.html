@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{ title }}</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='normalize.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='skeleton.css') }}">
+	</head>
+	<body>
+		<div id="add-user-module">
+			<h1>Fill out the form to add a user</h1>
+			{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					{% for msg in messages %}
+						<ul>
+							<li class="errors">{{ msg }}</li>
+						</ul>
+					{% endfor %}
+				{% endif %}
+			{% endwith %}
+			<form action="/users/create" method="POST">
+				<label>First Name:</label>
+				<input type="text" name="first_name" placeholder="Krombopulos">
+				<label>Last Name:</label>
+				<input type="text" name="last_name" placeholder="Michael">
+				<label>Email:</label>
+				<input type="text" name="email" placeholder="kmichael@rnm.com">
+				<input type="submit" value="ADD USER">
+			</form>
+		</div>
+	</body>
+</html>

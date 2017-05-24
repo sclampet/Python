@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{ title }}</title>
+		{% load staticfiles %}
+		<link rel="stylesheet" type="text/css" href="{% static 'login_reg/css/skeleton.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'login_reg/css/normalize.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'login_reg/css/styles.css' %}">
+	</head>
+	<body>
+		<div id="login-box">
+			{% if messages %}
+				{% for msg in messages %}
+					<h5 class="errors">{{ msg }}</h5>
+				{% endfor %}
+			{% endif %}
+			<h3>Login/Register or click <a href="{% url 'ninjagold:index'%}">play</a> to continue anyway.</h3>
+			<form action="{% url 'login:login' %}" method="POST">
+				{% csrf_token %}
+				<input type="text" name="email" placeholder="kmichael@rnm.com">
+				<input type="password" name="password" placeholder="********">
+				<input type="submit" value="Login">
+			</form>
+		</div>
+		<div id="register-box">
+			<h3>Registration</h3>
+			<form action="{% url 'login:register' %}" method="POST">
+				{% csrf_token %}
+				<label>First Name:</label>
+				<input type="text" name="first_name" placeholder="Krombobpulos">
+				<label>Last Name:</label>
+				<input type="text" name="last_name" placeholder="Michael">
+				<label>Email:</label>
+				<input type="text" name="email" placeholder="kmichael@rnm.com">
+				<label>Password:</label>
+				<input type="text" name="password" placeholder="********">
+				<label>Confirm Password:</label>
+				<input type="text" name="confirm" placeholder="********">
+				<input type="submit" value="SIGN UP">
+			</form>
+		</div>
+	</body>
+</html>
